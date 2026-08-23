@@ -2,14 +2,16 @@
 
 Official Python SDK for the [FisProxy](https://fisproxy.org) user session API.
 
-Create an API token on the signed-in **API** page. The plaintext is shown once. There is no login flow in this client.
+Create an API token on the signed-in **API** page. The plaintext is shown once. This client does not provide account sign-in.
 
-Default endpoint: `https://api.fisproxy.org`.
+Default endpoint: `https://api.fisproxy.org`. Request signing is handled by the SDK.
+
+中文说明（含每个方法的调用方式与返回字段）见 [README.zh-CN.md](README.zh-CN.md).
 
 ## Install
 
 ```bash
-pip install git+https://github.com/nyaproxy/python-sdk.git
+pip install git+https://github.com/nyaproxy/fisproxy-python-sdk.git
 ```
 
 Python 3.9+. No third-party runtime dependencies.

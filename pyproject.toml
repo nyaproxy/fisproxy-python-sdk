@@ -28,10 +28,10 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/nyaproxy/python-sdk"
-Documentation = "https://github.com/nyaproxy/python-sdk#readme"
-Issues = "https://github.com/nyaproxy/python-sdk/issues"
-Source = "https://github.com/nyaproxy/python-sdk"
+Homepage = "https://github.com/nyaproxy/fisproxy-python-sdk"
+Documentation = "https://github.com/nyaproxy/fisproxy-python-sdk#readme"
+Issues = "https://github.com/nyaproxy/fisproxy-python-sdk/issues"
+Source = "https://github.com/nyaproxy/fisproxy-python-sdk"
 
 [project.optional-dependencies]
 dev = ["hatchling"]
@@ -45,5 +45,6 @@ include = [
   "/tests",
   "/examples",
   "/README.md",
+  "/README.zh-CN.md",
   "/LICENSE",
 ]

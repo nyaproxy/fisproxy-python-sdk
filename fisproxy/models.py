@@ -90,7 +90,7 @@ class UserProfile:
 		user = payload.get("user")
 		if not isinstance(user, dict):
 			raise ValueError("missing user object")
-		session = user.get("session")
+		session = user.get("session") or user.get("currentSession")
 		return cls(
 			id=str(user.get("id") or ""),
 			username=str(user["username"]) if isinstance(user.get("username"), str) else None,

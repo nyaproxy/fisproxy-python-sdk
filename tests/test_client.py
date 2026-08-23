@@ -185,6 +185,14 @@ class FakeTransport:
 
 
 class ClientTests(unittest.TestCase):
+	def test_me_reads_current_session(self) -> None:
+		transport = FakeTransport()
+		transport.me_payload["user"]["currentSession"] = {"id": "s1", "sessionId": "4242", "state": "running"}
+		client = Client("tok_live", client_id="client-1", transport=transport)
+		me = client.me()
+		assert me.session is not None
+		self.assertEqual(me.session["sessionId"], "4242")
+
 	def test_me_keeps_decimal_strings(self) -> None:
 		transport = FakeTransport()
 		client = Client("tok_live", client_id="client-1", transport=transport)
