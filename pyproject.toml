@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fisproxy"
+version = "0.1.0"
+description = "Official Python SDK for the FisProxy user session API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+  { name = "f1sunia", email = "289944096+F1sunia@users.noreply.github.com" },
+]
+keywords = ["fisproxy", "minecraft", "proxy", "session"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/nyaproxy/python-sdk"
+Documentation = "https://github.com/nyaproxy/python-sdk#readme"
+Issues = "https://github.com/nyaproxy/python-sdk/issues"
+Source = "https://github.com/nyaproxy/python-sdk"
+
+[project.optional-dependencies]
+dev = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["fisproxy"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/fisproxy",
+  "/tests",
+  "/examples",
+  "/README.md",
+  "/LICENSE",
+]
