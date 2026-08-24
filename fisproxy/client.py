@@ -338,6 +338,8 @@ class Client:
 			"Accept": "application/json",
 			"Authorization": f"Bearer {self._token}",
 			"User-Agent": self._user_agent,
+			"X-FP-Content-Length": str(len(body)),
+			"X-FP-Content-SHA256": sha256_b64url(body),
 		}
 		if content_type:
 			headers["Content-Type"] = content_type

@@ -94,6 +94,10 @@ class FakeTransport:
 		query = urlsplit(url).query
 		target = path + (f"?{query}" if query else "")
 		if method == "POST" and path == "/api/v1/auth/admission":
+			if headers.get("X-FP-Content-Length") != str(len(body or b"")):
+				raise AssertionError("admission missing X-FP-Content-Length")
+			if headers.get("X-FP-Content-SHA256") != sha256_b64url(body or b""):
+				raise AssertionError("admission missing X-FP-Content-SHA256")
 			sent = json.loads(body or b"{}")
 			token = _admission_token(sent["clientId"], self.admission_expires_at)
 			payload = {
