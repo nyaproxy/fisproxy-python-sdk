@@ -71,8 +71,6 @@ class _Admission:
 	subject: str
 	admission_id: str
 	expires_at: int
-	server_time: int
-	server_epoch: str
 	payload: Mapping[str, Any]
 	clock_offset_ms: int
 	sequence: int
@@ -431,8 +429,6 @@ class Client:
 			subject=subject,
 			admission_id=admission_id,
 			expires_at=expires_at_n,
-			server_time=server_time_n,
-			server_epoch=server_epoch,
 			payload=dict(parsed),
 			clock_offset_ms=server_time_n - int(time.time() * 1000),
 			sequence=0,
